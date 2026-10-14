@@ -37,8 +37,6 @@ async function headers(extra: HeadersInit = {}): Promise<Headers> {
   const { data } = await supabase().auth.getSession();
   const h = new Headers(extra);
   if (data.session) h.set("Authorization", `Bearer ${data.session.access_token}`);
-  const s = appSession.get();
-  if (s) h.set("X-Session-ID", s); // ASSUMED header name
   return h;
 }
 export async function request(path: string, init: RequestInit = {}): Promise<Response> {
