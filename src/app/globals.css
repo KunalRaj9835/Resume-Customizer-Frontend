@@ -1,0 +1,22 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/800.css";
+@import "@fontsource/anton/400.css";
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{--brand:#FF4A00}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+.grid-light{background-color:#fff;background-image:linear-gradient(#0000000d 1px,transparent 1px),linear-gradient(90deg,#0000000d 1px,transparent 1px);background-size:min(11vw,110px) min(11vw,110px)}
+.grid-dark{background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:64px 64px}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.note{font-weight:800;text-transform:uppercase;line-height:1.15;color:#000}
+.wavy{text-decoration:underline wavy var(--brand);text-decoration-thickness:2px;text-underline-offset:4px}
+.circled{display:inline-block;border:2px solid var(--brand);border-radius:50%;padding:0 .35em;margin:0 -.2em}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.btn{@apply inline-flex min-h-12 items-center justify-center gap-2 bg-brand px-6 font-extrabold uppercase tracking-wide text-black transition-colors hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-60}
+.btn2{@apply inline-flex min-h-12 items-center justify-center gap-2 border-2 border-black bg-white px-5 font-extrabold uppercase tracking-wide text-black transition-colors hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-60}
+.card{@apply border-2 border-black bg-white p-5 text-black}
+.input{@apply w-full border-2 border-black bg-white px-3 py-3 text-sm text-black}
+.h-display{@apply font-display uppercase leading-none tracking-tight}
